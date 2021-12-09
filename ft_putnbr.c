@@ -3,27 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 10:56:04 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/01 11:30:55 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/09 11:14:23 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <unistd.h>
-
-int	ft_putnbr(int nb)
+int	len(int nb)
 {
-	unsigned int	n;
 	int	i;
 
 	i = 0;
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+	{
+		i++;
+		nb *= -1;
+	}
+	while(nb > 0)
+	{
+		nb /= 10;
+		i++;
+	}
+	return (i);
+}
+int	ft_putnbr(int nb)
+{
+	unsigned int	n;
+
 	if (nb < 0)
 	{
 		write (1, "-", 1);
 		n = nb * -1;
-		i++;
 	}
 	else
 	{
@@ -32,11 +46,18 @@ int	ft_putnbr(int nb)
 	if (n >= 10)
 	{
 		ft_putnbr(n / 10);
-		i += ft_putchar(n % 10 + 48);
+		ft_putchar(n % 10 + 48);
 	}
 	else if (n < 10)
 	{
-		i += ft_putchar(n + 48);
+		ft_putchar(n + 48);
 	}
-	return (i);
+	return (len(nb));
 }
+/*#include <stdio.h>
+int main()
+{
+	int	i;
+	i = ft_putnbr(0);
+	printf("\n%d", i);
+}*/
