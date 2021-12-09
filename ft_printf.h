@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:02:30 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/01 11:38:28 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/09 11:46:26 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int	ft_printf(const char *str, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *str);
 int	ft_putnbr(int nb);
+int	ft_putposnbr(unsigned int n);
 
 #endif
