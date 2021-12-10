@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 12:11:36 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/10 10:55:12 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/10 11:10:47 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	ft_puthexalow(unsigned int nb)
 	}
 	else
 	{
-		ft_puthexa(nb / 16);
-		ft_puthexa(nb % 16);
+		ft_puthexalow(nb / 16);
+		ft_puthexalow(nb % 16);
 	}
 	return (len(nb));
 }
@@ -48,7 +48,7 @@ int	ft_puthexalow(unsigned int nb)
 int	main()
 {
 	int	i;
-	i = ft_puthexa(55555);
+	i = ft_puthexalow(55555);
 	printf("%i", i);
 	i = printf("%x", 55555);
 	printf("%i", i);
