@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 11:09:11 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/11 18:31:16 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/11 18:51:02 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,17 @@ int	ft_printf(const char *args, ...)
 			else if (*args == 's')
 				i += ft_putstr(va_arg(ap, char *));
 			else if (*args == 'p')
-				i + = ft_putaddress(va_arg(ap , unsigned int));
+				i += ft_putaddress(va_arg(ap , unsigned int));
 			else if (*args == 'd' || *args == 'i')
 				i += ft_putnbr(va_arg(ap, int));
+			else if (*args == 'u')
+				i += ft_putposnbr(va_arg(ap, unsigned int));
+			else if (*args == 'x')
+				i += ft_puthexalow(va_arg(ap, unsigned int));
+			else if (*args == 'X')
+				i += ft_puthexaup(va_arg(ap, unsigned int));
+			else if (*args == '%')
+				i += ft_putchar('%');
 		}
 	}
 	va_end(ap);
@@ -39,5 +47,5 @@ int	ft_printf(const char *args, ...)
 }
 int	main()
 {
-	ft_printf("%d", 525);
+	ft_printf("%%");
 }
