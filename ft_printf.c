@@ -1,46 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   t_printf.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 15:01:51 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/10 10:28:02 by iel-moha         ###   ########.fr       */
+/*   Created: 2021/12/11 11:09:11 by iel-moha          #+#    #+#             */
+/*   Updated: 2021/12/11 15:38:38 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+int	ft_printf(const char *args, ...)
 {
-	va_list	var;
-	int		i;
-    
-	i = 0;
-    va_start (var, str);
-	while(*str)
-	{
-		if(*str == "%")
-		{
-			str++;
-			if (*str == 'c')
-				i += ft_putchar(va_arg(var, int));
-			else if (*str == 's')
-				i += ft_putstr(va_arg(var, char *));
-			else if (*str == 'd' || *str == 'i')
-				i += ft_putnbr(va_arg(var, char *));
-			else if (*str == 'u')
-				i += ft_putposnbr(va_arg(var, char *));
-		}
-		else
-			i += ft_putchar(*str);
-		str++;
-	}
-}
+	va_list	ap; // argument parameter
 
-/*int main()
+	va_start(ap, args);
+	int	i;
+
+	while(*args)
+	{
+		if(*args == '%')
+		{
+			args++;
+			if(*args == 'c')
+				i += ft_putchar(va_arg(ap, int));
+			else if (*args == 's')
+				i += ft_putstr(va_arg(ap, char *));
+			else if(*args == 'd' || *args == 'i')
+				i += ft_putnbr(va_arg(ap, int));
+		}
+	}
+	va_end(ap);
+	return (i);
+}
+int	main()
 {
-	int s = printf("hello");
-	printf("%d", s);
-}*/
+	ft_printf("%d", 525);
+}
