@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthexa.c                                       :+:      :+:    :+:   */
+/*   ft_putaddress.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 12:11:36 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/11 18:15:51 by iel-moha         ###   ########.fr       */
+/*   Created: 2021/12/11 16:21:27 by iel-moha          #+#    #+#             */
+/*   Updated: 2021/12/11 18:29:56 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-int	len(unsigned int nb)
+int	len(unsigned long nb)
 {
 	int	i;
 
@@ -25,7 +26,7 @@ int	len(unsigned int nb)
 	return (i);
 }
 
-int	ft_puthexalow(unsigned int nb)
+void	ft_puthexalow(unsigned long nb)
 {
 	char	c;
 
@@ -42,14 +43,26 @@ int	ft_puthexalow(unsigned int nb)
 		ft_puthexalow(nb / 16);
 		ft_puthexalow(nb % 16);
 	}
-	return (len(nb));
+}
+
+int	ft_putaddress(unsigned long	nb)
+{
+	write (1 , "0x", 2);
+	ft_puthexalow(nb);
+	return (len(nb) + 2);
 }
 /*
 int	main()
 {
 	int	i;
-	i = ft_puthexalow(55555);
-	printf("%i", i);
-	i = printf("%x", 55555);
-	printf("%i", i);
+	int	c;
+	unsigned long a = (unsigned long)&i;
+	c = printf("%p", &i);
+	printf("\n");
+	printf("%d", c);
+	printf("\n");
+	c = ft_putaddress(a);
+	printf("\n");
+	printf("%d", c);
+	printf("\n");
 }*/
