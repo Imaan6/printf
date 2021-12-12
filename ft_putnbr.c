@@ -6,12 +6,12 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 10:56:04 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/09 11:14:23 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/12 11:41:36 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-int	len(int nb)
+int	len_n(int nb)
 {
 	int	i;
 
@@ -52,7 +52,7 @@ int	ft_putnbr(int nb)
 	{
 		ft_putchar(n + 48);
 	}
-	return (len(nb));
+	return (len_n(nb));
 }
 /*#include <stdio.h>
 int main()

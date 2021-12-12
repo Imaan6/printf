@@ -6,12 +6,12 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 11:23:34 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/09 11:45:40 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/12 11:42:18 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-int	len(int nb)
+int	len_p(int nb)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ int	ft_putposnbr(unsigned int n)
 {
 	int	i;
 
-	i = len(n);
+	i = len_p(n);
 	if (n >= 10)
 	{
 		ft_putposnbr(n / 10);

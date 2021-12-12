@@ -6,13 +6,13 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:12:48 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/10 11:15:34 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/12 11:40:52 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	len(unsigned int nb)
+int	len_u(unsigned int nb)
 {
 	int	i;
 
@@ -42,7 +42,7 @@ int	ft_puthexaup(unsigned int nb)
 		ft_puthexaup(nb / 16);
 		ft_puthexaup(nb % 16);
 	}
-	return (len(nb));
+	return (len_u(nb));
 }
 /*
 int	main()
