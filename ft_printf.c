@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 11:09:11 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/12 14:16:57 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/12 18:40:39 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,15 @@ int	ft_printf(const char *args, ...)
 	va_end(ap);
 	return (i);
 }
-/*
-#include <stdio.h>
+/*#include <stdio.h>
 int	main()
 {
-	int	i = 5;
+	int	i;
 //	printf("%lu\n", &i);
-	ft_printf("My printf can print this int %d: and this address : %p", i, &i);
 //	ft_printf("iip \n fg");
+//	ft_printf(" NULL %s NULL ", NULL);
+	i = ft_printf(" %p %p ", 0, 0);
+	printf(" %d ", i);
+	i = printf(" %p %p ", 0, 0);
+	printf(" %d ", i);
 }*/
