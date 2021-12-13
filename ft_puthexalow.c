@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 12:11:36 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/12 11:40:06 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/13 10:20:18 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	len_l(unsigned int nb)
 	int	i;
 
 	i = 0;
+	if(nb == 0)
+		return (i = 1);
 	while(nb > 0)
 	{
 		nb /= 16;
@@ -48,8 +50,8 @@ int	ft_puthexalow(unsigned int nb)
 int	main()
 {
 	int	i;
-	i = ft_puthexalow(55555);
+	i = ft_puthexalow(0);
 	printf("%i", i);
-	i = printf("%x", 55555);
+	i = printf("%x", 0);
 	printf("%i", i);
 }*/

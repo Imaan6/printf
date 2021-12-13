@@ -6,12 +6,12 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 11:23:34 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/12 11:42:18 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/13 10:15:43 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-int	len_p(int nb)
+int	len_p(unsigned int nb)
 {
 	int	i;
 
@@ -50,7 +50,7 @@ int	ft_putposnbr(unsigned int n)
 int main()
 {
 	int	i;
-	i = ft_putposnbr(-1000);
+	i = ft_putposnbr(-1);
 	printf("\n%d", i);
 }*/
 /*int main()
