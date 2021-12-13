@@ -6,17 +6,18 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 10:56:04 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/13 10:10:45 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/13 11:03:38 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 int	len_n(int nb)
 {
 	int	i;
 
 	i = 0;
-	if(nb == -2147483648)
+	if (nb == -2147483648)
 		return (i = 11);
 	if (nb == 0)
 		return (1);
@@ -25,13 +26,14 @@ int	len_n(int nb)
 		i++;
 		nb *= -1;
 	}
-	while(nb > 0)
+	while (nb > 0)
 	{
 		nb /= 10;
 		i++;
 	}
 	return (i);
 }
+
 int	ft_putnbr(int nb)
 {
 	unsigned int	n;

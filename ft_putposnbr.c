@@ -6,11 +6,12 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 11:23:34 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/13 10:15:43 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/13 11:04:26 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 int	len_p(unsigned int nb)
 {
 	int	i;
@@ -23,13 +24,14 @@ int	len_p(unsigned int nb)
 		i++;
 		nb *= -1;
 	}
-	while(nb > 0)
+	while (nb > 0)
 	{
 		nb /= 10;
 		i++;
 	}
 	return (i);
 }
+
 int	ft_putposnbr(unsigned int n)
 {
 	int	i;

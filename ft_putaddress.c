@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 16:21:27 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/12 18:43:11 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/13 11:00:40 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	len_a(unsigned long nb)
 	i = 0;
 	if (nb == 0)
 		return (i = 1);
-	while(nb > 0)
+	while (nb > 0)
 	{
 		nb /= 16;
 		i++;
@@ -47,9 +47,9 @@ void	ft_puthexadd(unsigned long nb)
 	}
 }
 
-int	ft_putaddress(unsigned long	nb)
+int	ft_putaddress(unsigned long nb)
 {
-	write (1 , "0x", 2);
+	write (1, "0x", 2);
 	ft_puthexadd(nb);
 	return (len_a(nb) + 2);
 }

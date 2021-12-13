@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 18:34:22 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/12/12 18:14:36 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/12/13 11:05:06 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_putstr(char *str)
 	i = 0;
 	if (!str)
 	{
-		return(ft_putstr("(null)"));
+		return (ft_putstr("(null)"));
 	}
 	while (str[i] != '\0')
 	{
